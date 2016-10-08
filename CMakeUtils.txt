@@ -1,4 +1,7 @@
-if( ${CMAKE_HOST_SYSTEM_NAME} MATCHES ".*Windows.*")
+if( ${MINGW} )
+    set( IS_LINUX 1 )
+    message( STATUS "Compiling for Windows (MinGW)" )
+elseif( ${CMAKE_HOST_SYSTEM_NAME} MATCHES ".*Windows.*" )
     set(IS_WINDOWS 1)
     message( STATUS "Compiling for Windows" )
 elseif( ${CMAKE_HOST_SYSTEM_NAME} MATCHES ".*Darwin.*" )
